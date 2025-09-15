@@ -144,7 +144,7 @@ function Footer() {
           <a href="mailto:donaerickoulodji@gmail.com" aria-label="Email">
             <Mail size={25} />
           </a>
-          <a href='https://github.com/dona-erick' aria-label='Github'>
+          <a href='https://github.com/dona-eric' aria-label='Github'>
             <Github size={
               25
             }/>
