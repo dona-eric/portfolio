@@ -49,13 +49,14 @@ const PROJECTS_DATA = [
     image: "🚗",
     difficulty: "Avancé",
     duration: "en estimation",
+    impact: "Reduire des accidents de route"
   },
   {
     id: 3,
     title: "Dashboard VE",
     description: "Tableau de bord interactif pour l'analyse avancée des données de recharge de véhicules électriques avec prédictions de consommation.",
     longDescription: "Dashboard interactif pour analyser les patterns de recharge et optimiser les coûts énergétiques.",
-    technologies: ["Python", "Streamlit", "Plotly", "Pandas", "", "TimeSeries"],
+    technologies: ["Python", "Streamlit", "Plotly", "Pandas", "Dash", "TimeSeries"],
     category: "Data Viz",
     status: "Terminé",
     icon: Zap,
@@ -64,7 +65,7 @@ const PROJECTS_DATA = [
     github: "https://github.com/dona-eric/dashboard-ve",
     demo: "non deployé",
     image: "⚡",
-    difficulty: "Apprentissage",
+    difficulty: "Intermédiaire",
     duration: "4 mois",
     impact: "30% réduction coûts"
   },
@@ -103,6 +104,7 @@ const PROJECTS_DATA = [
     image: "🤖",
     difficulty: "Tous",
     duration: "Hackaton(01 Semaine)",
+    impact: "N/A"
   },
   {
     id: 6,
@@ -118,8 +120,9 @@ const PROJECTS_DATA = [
     github: "https://github.com/dona-eric/customer-satisfaction-analysis",
     demo: "https://github.com/dona-eric/customer-satisfaction-analysis",
     image: "🤷‍♂️",
-    difficulty: "Tous",
+    difficulty: "Intermédiaire",
     duration: "01 Mois",
+    impact: "N/A"
   },
 ];
 
