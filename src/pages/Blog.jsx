@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 // import { api } from "../api/api"; // Désactivé tant que l'API n'est pas prête
+import book from "../assets/1.png";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -24,10 +25,18 @@ export default function Blog() {
     },
     {
       id: 3,
-      title: "Comment construire un Portfolio développeur",
-      excerpt: "Apprenez à créer un portfolio professionnel qui met en valeur vos projets et vos compétences.",
-      image: "https://source.unsplash.com/600x400/?developer,portfolio",
+      title: "Comment construire un Portfolio en tant que Data Scientist avec Quarto",
+      excerpt: "Apprenez à créer un portfolio professionnel qui met en valeur vos projets et vos compétences avec quarto",
+      image: "https://github.com/dona-eric/Learning-Quarto-to-create-website",
       created_at: "2025-08-10",
+    },
+    {
+      id: 4,
+      title: "Les Cinq (05) meilleures techniques du Prompt Engineering",
+      excerpt: "Arretez de deviner ce que l'ia attend de vous ! Vous voulez gagner du temps et de l'argent avec l'ia à l'ère du 21è siècle, apprenez à communiquer efficacement avec l'IA en appliquant les cinq meilleurs techniques infaillibles. Le livre se trouve ici 👇🏻",
+      image: {book},
+      link: "https://cykrhzat.mychariow.com/prompt",
+      created_at: "2025-09-13"
     },
   ];
 

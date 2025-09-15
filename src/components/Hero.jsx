@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import heroImage from "../assets/team-eric.jpg";
-
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -42,7 +42,7 @@ export default function Hero() {
               <TypeAnimation
                 sequence={[
                   "Data Scientist & Machine Learning Engineer,", 800,
-                  "Passioné de l'Intelligence Artificielle et de l'espace,", 800,
+                  "Passionné de l'Intelligence Artificielle et de l'espace,", 800,
                   "Titulaire d'une licence en Physique Fondamentale,", 800,
                   "Ambassadeur 10000Codeurs ."
                 ]}
@@ -53,22 +53,23 @@ export default function Hero() {
           </h1>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <motion.a
-              href="./about"
-              className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-transform duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ delay: 0.2 }}
-            >
-              About-me
-            </motion.a>
-            <motion.a
-              href="./about"
-              className="px-6 py-3 border-2 border-indigo-600 text-purple-600 rounded-lg hover:bg-indigo-50 hover:scale-105 transition-transform duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ delay: 0.4 }}
-            >
-              Mon CV
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ delay: 0.2 }}>
+              <Link
+                to="/about"
+                className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg hover:from-indigo-700 hover:to-purple-700 transition-transform duration-300"
+              >
+                About-me
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ delay: 0.4 }}>
+              <Link
+                to="/about"
+                className="px-6 py-3 border-2 border-indigo-600 text-purple-600 rounded-lg hover:bg-indigo-50 transition-transform duration-300"
+              >
+                Mon CV
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
 
