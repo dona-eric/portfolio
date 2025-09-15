@@ -3,7 +3,6 @@ import Hero from './Hero'
 import About from './About'
 import Services from './Services'
 import Portfolio from './Portfolio'
-import Testimonials from './Testimonials'
 import ContactForm from './ContactForm'
 
 export default function AllSections(){
@@ -13,7 +12,6 @@ export default function AllSections(){
       <About />
       <Services />
       <Portfolio />
-      <Testimonials />
       <section id="contact" className="container mx-auto px-6">
         <ContactForm />
       </section>

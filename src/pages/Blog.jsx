@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react"
 // import { api } from "../api/api"; // Désactivé tant que l'API n'est pas prête
 import book from "../assets/1.png";
+import data from "../assets/data.jpg";
+import portf from "../assets/portf.webp";
+import machine from "../assets/machine.png";
+
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -13,45 +17,36 @@ export default function Blog() {
       id: 1,
       title: "Introduction à l’IA et Machine Learning",
       excerpt: "Découvrez les bases de l’intelligence artificielle et ses applications dans le monde moderne.",
-      image: "https://source.unsplash.com/600x400/?ai,technology",
+      image: machine,
       created_at: "2025-09-01",
     },
     {
       id: 2,
       title: "Data Science pour débutants",
       excerpt: "Un guide pratique pour comprendre la data science et comment commencer un projet étape par étape.",
-      image: "https://source.unsplash.com/600x400/?data,science",
+      image: data,
+      link: "https://medium.com/koulodjiric",
       created_at: "2025-08-20",
     },
     {
       id: 3,
       title: "Comment construire un Portfolio en tant que Data Scientist avec Quarto",
       excerpt: "Apprenez à créer un portfolio professionnel qui met en valeur vos projets et vos compétences avec quarto",
-      image: "https://github.com/dona-eric/Learning-Quarto-to-create-website",
+      image: portf,
       created_at: "2025-08-10",
     },
     {
       id: 4,
       title: "Les Cinq (05) meilleures techniques du Prompt Engineering",
       excerpt: "Arretez de deviner ce que l'ia attend de vous ! Vous voulez gagner du temps et de l'argent avec l'ia à l'ère du 21è siècle, apprenez à communiquer efficacement avec l'IA en appliquant les cinq meilleurs techniques infaillibles. Le livre se trouve ici 👇🏻",
-      image: {book},
+      image: book,
       link: "https://cykrhzat.mychariow.com/prompt",
       created_at: "2025-09-13"
     },
   ];
 
   useEffect(() => {
-    // Simulation d’attente API
     setTimeout(() => {
-      // ➡️ Quand l'API sera prête, tu réactives cette partie :
-      /*
-      api.getArticles()
-        .then(data => setPosts(data))
-        .catch(err => setError(err.message))
-        .finally(() => setLoading(false));
-      */
-
-      // Pour l’instant, on charge les données fictives
       setPosts(mockPosts);
       setLoading(false);
     }, 1000);
@@ -95,10 +90,12 @@ export default function Blog() {
                 {new Date(post.created_at).toLocaleDateString()}
               </span>
               <a
-                href={`/blog/${post.id}`}
+                href={post.link ? post.link : `/blog/${post.id}`}
+                target={post.link ? "_blank" : "_self"}
+                rel={post.link ? "noopener noreferrer" : ""}
                 className="px-3 py-1 bg-gradient-to-r from-pink-500 via-purple-500 to-sky-500 text-white text-xs rounded hover:opacity-90 transition"
               >
-                Lire la suite
+                {post.link ? "Voir le contenu" : "Lire la suite"}
               </a>
             </div>
           </article>

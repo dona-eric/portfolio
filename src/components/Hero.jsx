@@ -84,7 +84,7 @@ export default function Hero() {
           <img
             src={heroImage}
             alt="Eric"
-            className="w-full h-full object-cover object-center transform hover:scale-110 transition duration-700"
+            className="w-100 h-100 object-cover object-center transform hover:scale-110 transition duration-700"
           />
         </motion.div>
       </div>

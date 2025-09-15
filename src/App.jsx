@@ -1,6 +1,6 @@
 import React, { useState, Suspense, lazy, useEffect } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Sun, Moon, Linkedin, Twitter, Mail, Github } from 'lucide-react'
+import { Sun, Moon, Linkedin, Twitter, Mail, Github} from 'lucide-react'
 import logo from "./assets/team-eric.jpg";
 
 // Lazy loading pages

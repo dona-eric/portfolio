@@ -41,7 +41,7 @@ const About = () => {
             Data Scientist & Machine Learning Engineer.
             Je crée des solutions digitales innovantes pour accompagner les entreprises, 
             étudiants et institutions. Mes expertises couvrent le développement web, 
-            la data science et l’intelligence artificielle. Nous formons et mentorons 
+            la data science et l’intelligence artificielle. J'oeuvre pour
             la prochaine génération de talents africains du numérique.
           </p>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Testimonials from "../components/Testimonials";
+/*import Testimonials from "../components/Testimonials";*/
 
 export default function Home() {
   return (
@@ -20,18 +20,6 @@ export default function Home() {
         className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
       >
         <About />
-      </motion.section>
-
-      {/* Testimonials */}
-      <motion.section
-        id="testimonials"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative"
-      >
-        <Testimonials />
       </motion.section>
 
       {/* Contact */}
