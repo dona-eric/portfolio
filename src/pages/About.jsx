@@ -1,28 +1,19 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { 
-  GraduationCap, 
-  Briefcase, 
-  Code, 
-  Brain, 
-  Rocket, 
-  Award, 
-  Target,
-  Heart,
-  Star,
-  CheckCircle,
-  Calendar,
-  MapPin,
-  Users,
-  BookOpen
+import { GraduationCap, Briefcase, Code, Brain, Rocket, Award, Target, 
+  Heart, Star, CheckCircle, Calendar, MapPin, Users, Code2, BookOpen, GanttChartIcon
 } from 'lucide-react';
 import { color } from 'framer-motion';
+import llm_rag from "../certifs/certificat_llm.png";
+import ibm_data from "../certifs/ibm_digital.png";
+import python from "../certifs/intermediate.png";
 
 // Constantes pour éviter les re-créations
 const SECTIONS = [
-  { id: 'parcours', label: 'Parcours', icon: GraduationCap },
-  { id: 'experience', label: 'Expérience', icon: Briefcase },
-  { id: 'competences', label: 'Compétences', icon: Code },
-  { id: 'valeurs', label: 'Valeurs', icon: Heart }
+  { id: 'parcours', label: 'Graduation', icon: GraduationCap },
+  { id: 'experience', label: 'Experience', icon: Briefcase },
+  { id: 'competences', label: 'Skills', icon: Code },
+  {id: "certificats", label: 'Certificates', icon: Code2},
+  { id: 'valeurs', label: 'Values & Committment', icon: Heart }
 ];
 
 const PARCOURS_DATA = [
@@ -185,6 +176,31 @@ const VALUES_DATA = [
   }
 ];
 
+const CERTIFICATS_DATA = [
+  {
+    id: 1,
+    title: "IBM Data Science Professional Certificate",
+    image: ibm_data,
+    platform: "Coursera",
+    link: "https://coursera.org"
+  },
+  {
+    id: 2,
+    title: "Building LLM Applications with Prompt Engineering",
+    image: llm_rag,
+    platform: "NVIDIA-DLI",
+    link: "https://learn.nvidia.com/certificates?id=obSjywnjSLG_iDn5ddpLag"
+  },
+  {
+    id: 3,
+    title: "Intermediate Python Developper",
+    image: python,
+    platform: "DataCamp",
+    link: "https://app.datacamp.com"
+  }
+];
+
+
 // Composants optimisés
 const NavigationTab = ({ section, isActive, onClick }) => (
   <button
@@ -212,7 +228,7 @@ const ParcoursCard = ({ item, index }) => (
       transition-all duration-300 hover:bg-white/10 hover:scale-105 
       hover:border-white/20 group
     `}
-    style={{ animationDelay: `${index * 0.15}s` }}
+    style={{ animationDelay: `${index * 3.15}s` }}
   >
     <div className="flex items-start gap-4">
       <div className={`p-3 rounded-xl bg-gradient-to-br ${item.bgColor} group-hover:scale-110 transition-transform duration-300`}>
@@ -238,7 +254,7 @@ const ParcoursCard = ({ item, index }) => (
 const ExperienceCard = ({ exp, index }) => (
   <div 
     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:border-white/20 group"
-    style={{ animationDelay: `${index * 0.2}s` }}
+    style={{ animationDelay: `${index * 3.15}s` }}
   >
     <div className="flex items-start gap-6">
       <div className={`p-4 rounded-2xl bg-gradient-to-br ${exp.color} group-hover:scale-110 transition-transform duration-300`}>
@@ -302,7 +318,7 @@ const CompetenceCard = ({ comp, index }) => (
       transition-all duration-300 hover:scale-105 group
       ${comp.bgColor} hover:border-white/20
     `}
-    style={{ animationDelay: `${index * 0.15}s` }}
+    style={{ animationDelay: `${index * 3.15}s` }}
   >
     <div className="flex items-center gap-4 mb-6">
       <comp.icon className={`w-8 h-8 ${comp.color} group-hover:scale-110 transition-transform duration-300`} />
@@ -321,10 +337,39 @@ const CompetenceCard = ({ comp, index }) => (
   </div>
 );
 
+const CertificationCard = ({ cert, index }) => (
+  <div
+    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 
+               transition-all duration-300 hover:scale-105 hover:border-white/20 group"
+    style={{ animationDelay: `${index * 3.15}s` }}
+  >
+    <img
+      src={cert.image}
+      alt={cert.title}
+      className="w-100 h-100 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+    />
+    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">
+      {cert.title}
+    </h3>
+    <p className="text-sm text-gray-400 mb-4">Plateforme : {cert.platform}</p>
+    <a
+      href={cert.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block px-4 py-2 text-sm font-medium text-white bg-gradient-to-r 
+                 from-purple-600 to-pink-600 rounded-lg shadow hover:from-purple-700 
+                 hover:to-pink-700 transition-colors"
+    >
+      View
+    </a>
+  </div>
+);
+
+
 const ValueCard = ({ value, index }) => (
   <div 
     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-center group hover:border-white/20"
-    style={{ animationDelay: `${index * 0.15}s` }}
+    style={{ animationDelay: `${index * 3.15}s` }}
   >
     <div className={`w-16 h-16 bg-gradient-to-br ${value.bgGradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
       <value.icon className={`w-8 h-8 ${value.color}`} />
@@ -345,7 +390,7 @@ const SectionContent = ({ activeSection }) => {
         return (
           <div className="space-y-8 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-center mb-12 text-purple-300">
-              🎓 Parcours Académique & Professionnel
+              🎓 Graduation Academic & Professional
             </h2>
             <div className="grid gap-6 max-w-4xl mx-auto">
               {PARCOURS_DATA.map((item, index) => (
@@ -359,7 +404,7 @@ const SectionContent = ({ activeSection }) => {
         return (
           <div className="space-y-8 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-center mb-12 text-purple-300">
-              💼 Expérience Professionnelle
+              💼 Professional Experience
             </h2>
             <div className="grid gap-8 max-w-5xl mx-auto">
               {EXPERIENCES_DATA.map((exp, index) => (
@@ -373,7 +418,7 @@ const SectionContent = ({ activeSection }) => {
         return (
           <div className="space-y-8 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-center mb-12 text-purple-300">
-              🚀 Compétences Techniques
+              🚀 Technicals Skills
             </h2>
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {COMPETENCES_DATA.map((comp, index) => (
@@ -382,12 +427,25 @@ const SectionContent = ({ activeSection }) => {
             </div>
           </div>
         );
-
+      
+      case 'certificats':
+        return (
+          <div className="space-y-8 animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-center mb-12 text-purple-300">
+              📜 Certifications
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {CERTIFICATS_DATA.map((cert, index) => (
+                <CertificationCard key={cert.id} cert={cert} index={index} />
+              ))}
+            </div>
+          </div>
+       );
       case 'valeurs':
         return (
           <div className="space-y-8 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-center mb-12 text-purple-300">
-              💝 Mes Valeurs & Engagements
+              💝 Values & Commitment
             </h2>
             <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
               {VALUES_DATA.map((value, index) => (
@@ -465,8 +523,9 @@ const About = () => {
               About me
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Je suis <span className="text-purple-400 font-semibold">Éric KOULODJI</span>, Data Scientist et Machine Learning Engineer 
-              passionné par la création de solutions innovantes qui transforment les données en décisions concrètes.
+              Je suis <span className="text-purple-400 font-semibold">Éric KOULODJI</span>, Data Scientist et Machine Learning Engineer.
+              Passionné de la data et l'IA, je crée des solutions innovantes qui transforment les données en décisions concrètes avec impact réel.
+              J’accompagne entreprises et projets à tirer parti de l’intelligence artificielle pour innover et créer de la valeur.
             </p>
           </div>
 
@@ -486,16 +545,16 @@ const About = () => {
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(10px);
           }
         }
         
         .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+          animation: fade-in-up 2.5s ease-out forwards;
           will-change: transform, opacity;
         }
         

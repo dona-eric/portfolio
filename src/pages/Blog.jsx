@@ -4,24 +4,43 @@ import book from "../assets/1.png";
 import data from "../assets/data.jpg";
 import portf from "../assets/portf.webp";
 import machine from "../assets/machine.png";
-
+import reconversion from "../assets/reconversion.jpg";
+import ideathon from "../assets/ideathon.jpg";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Données fictives (mock)
-  const mockPosts = [
+  const Posts = [
     {
       id: 1,
+      title: "Ma reconversion professionnelle en tant que Data Science",
+      excerpt: "",
+      image: reconversion,
+      created_at: "2024-09-07",
+      link: "https://medium.com/koulodjiric"
+    },
+    {
+      id: 2,
+      title: "3è Prix lors d'un Idéathon Sciences",
+      excerpt: "",
+      image: ideathon,
+      created_at: "2024-09-17",
+      link: "https://medium.com/koulodjiric"
+
+    },
+    {
+      id: 3,
       title: "Introduction à l’IA et Machine Learning",
       excerpt: "Découvrez les bases de l’intelligence artificielle et ses applications dans le monde moderne.",
       image: machine,
       created_at: "2025-09-01",
+      link: "https://medium.com/koulodjiric"
+
     },
     {
-      id: 2,
+      id: 4,
       title: "Data Science pour débutants",
       excerpt: "Un guide pratique pour comprendre la data science et comment commencer un projet étape par étape.",
       image: data,
@@ -29,14 +48,16 @@ export default function Blog() {
       created_at: "2025-08-20",
     },
     {
-      id: 3,
+      id: 5,
       title: "Comment construire un Portfolio en tant que Data Scientist avec Quarto",
       excerpt: "Apprenez à créer un portfolio professionnel qui met en valeur vos projets et vos compétences avec quarto",
       image: portf,
       created_at: "2025-08-10",
+      link: "https://medium.com/koulodjiric"
+
     },
     {
-      id: 4,
+      id: 6,
       title: "Les Cinq (05) meilleures techniques du Prompt Engineering",
       excerpt: "Arretez de deviner ce que l'ia attend de vous ! Vous voulez gagner du temps et de l'argent avec l'ia à l'ère du 21è siècle, apprenez à communiquer efficacement avec l'IA en appliquant les cinq meilleurs techniques infaillibles. Le livre se trouve ici 👇🏻",
       image: book,
@@ -47,7 +68,7 @@ export default function Blog() {
 
   useEffect(() => {
     setTimeout(() => {
-      setPosts(mockPosts);
+      setPosts(Posts);
       setLoading(false);
     }, 1000);
   }, []);
@@ -59,14 +80,14 @@ export default function Blog() {
     <div className="container mx-auto px-6 py-12">
       <header className="mb-10 text-center">
         <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-sky-500 animate-gradient-x">
-          Blog & Actualités
+          Blog & Actualités & Events
         </h2>
         <p className="text-slate-600 mt-2 text-lg">
-          Articles, annonces de cohortes et tutoriels.
+          Veuillez retrouver ici mes articles, mes tutoriels, mes évènements
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {posts.map((post) => (
           <article
             key={post.id}
@@ -76,7 +97,7 @@ export default function Blog() {
               <img
                 src={post.image}
                 alt={post.title}
-                className="rounded-xl mb-4 w-full h-48 object-cover"
+                className="rounded-xl mb-4 w-full h-30 object-cover"
               />
             )}
             <h3 className="font-semibold text-lg text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-pink-500">

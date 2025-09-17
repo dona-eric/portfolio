@@ -96,7 +96,7 @@ export default function Signup() {
         transition={{ duration: 0.8 }}
       >
         <p className="text-slate-400 max-w-xl mx-auto">
-          Après votre inscription, notre équipe vous contactera pour confirmer
+          Après votre inscription, je vous contacterai pour confirmer
           votre place et vous fournir toutes les informations nécessaires.
         </p>
       </motion.section>

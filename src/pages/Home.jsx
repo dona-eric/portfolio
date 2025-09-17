@@ -68,7 +68,7 @@ export default function Home() {
                 <a
                   href="https://linkedin.com/in/dona-erick"
                   className="text-blue-400 hover:underline"
-                >
+                  >
                   @dona-erick
                 </a>
               </li>

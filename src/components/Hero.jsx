@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Hello ! Je suis Dona Eric KOULODJI, {" "}
+            👋 Hello ! Je suis Dona Eric KOULODJI {" "}
             <span className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent">
               <TypeAnimation
                 sequence={[
@@ -51,7 +51,6 @@ export default function Hero() {
               />
             </span>
           </h1>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ delay: 0.2 }}>
               <Link

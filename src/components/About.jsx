@@ -39,10 +39,8 @@ const About = () => {
           <p className="mt-6 text-slate-300 leading-relaxed">
             Je suis <span className="font-semibold text-indigo-400">Dona Eric KOULODJI</span>,
             Data Scientist & Machine Learning Engineer.
-            Je crée des solutions digitales innovantes pour accompagner les entreprises, 
-            étudiants et institutions. Mes expertises couvrent le développement web, 
-            la data science et l’intelligence artificielle. J'oeuvre pour
-            la prochaine génération de talents africains du numérique.
+            Je conçois des projets qui allient innovation, technologie et impact réel.
+            Mon credo : faire parler les données pour construire le futur.
           </p>
         </div>
 

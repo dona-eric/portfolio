@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import {
-  Loader2,
-  CheckCircle,
-  XCircle,
-  Mail,
-  User,
-  MessageSquare,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import {Loader2, CheckCircle, XCircle, Mail, User, MessageSquare, Phone, MapPin,} 
+from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { api } from "../api/api";
 

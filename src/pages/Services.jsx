@@ -4,23 +4,23 @@ import { Code, Database, Cpu, BookOpen } from "lucide-react";
 
 const services = [
   {
-    title: "Développement Web",
-    description: "Création de sites web modernes et performants adaptés à vos besoins.",
+    title: "Analyse de données",
+    description: "Aider les entreprises à comprendre leurs données, à identifier des tendances et à prendre des décisions éclairées.",
     icon: <Code className="w-8 h-8 text-indigo-600" />,
   },
   {
     title: "Data & IA",
-    description: "Analyse de données et solutions intelligentes pour booster votre business.",
+    description: "Développement de modèles de Machine Learning personalisés pour répondre à des problèmes spécifiques. Aider les entreprises à intégrer l'IA dans leurs processus métier pour améliorer l'éfficacité et la productivité",
     icon: <Database className="w-8 h-8 text-indigo-600" />,
   },
   {
-    title: "Formations",
-    description: "Cours en ligne et en présentiel pour former vos équipes et étudiants.",
-    icon: <BookOpen className="w-8 h-8 text-indigo-600" />,
+    title: "Formations & Ateliers",
+    description: "Organiser des formations et des ateliers pour les étudiants et employés des entreprises sur les concepts de base de la science des données et l'intelligence artificielle.",
+    icon: <BookOpen className="w-8 h-8 from-purple-500 to-pink-600" />,
   },
   {
     title: "Conseil & Mentorat",
-    description: "Accompagnement sur vos projets numériques et mentoring personnalisé.",
+    description: "Offrir du mentorat à des étudiants ou à des professionnels qui souhaitent se lancer dans une carrière de la science des données, du Machine Learning et de l'Intelligence Artificielle.",
     icon: <Cpu className="w-8 h-8 text-indigo-600" />,
   },
 ];
@@ -30,7 +30,7 @@ export default function ServicesSection() {
     <section className="relative py-16">
       {/* Background animé léger */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 animate-gradient-slow opacity-40"></div>
+        <div className="w-full h-full bg-gradient-to-r from-purple-500 via-purple-100 to-pink-600 animate-gradient-slow opacity-40"></div>
       </div>
 
       <div className="container mx-auto px-6">

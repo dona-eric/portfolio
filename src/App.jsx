@@ -131,7 +131,7 @@ function Nav() {
 // Footer
 function Footer() {
   return (
-    <footer className="bg-sky-800 dark:bg-slate-900 text-white p-8 mt-8">
+    <footer className="bg-sky-800 dark:bg-slate-900 text-purple-800 to pink-800 p-8 mt-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <span>© Copyright 2025 donaerickoulodji. All rights reserved.</span>
         <div className="flex gap-4">
