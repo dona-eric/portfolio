@@ -137,7 +137,7 @@ const PROJECTS_DATA = [
     features: ["RAG", "VectorDB", "Optimisation", "Personnalisation", "Multi-format", "Analytics"],
     github: "https://huggingface.co/spaces/donerick/",
     demo: "https://huggingface.co/spaces/donerick/Projects",
-    image: rag,
+    image: "Documents 📚",
     difficulty: "Avancé",
     duration: "02 jours",
     impact: "N/A"
