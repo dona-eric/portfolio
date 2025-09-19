@@ -13,7 +13,7 @@ import {
   AlertCircle,
   CheckCircle2
 } from 'lucide-react';
-
+import rag from '../assets/rag.png';
 // Constantes pour éviter les re-créations
 const PROJECTS_DATA = [
   {
@@ -122,6 +122,24 @@ const PROJECTS_DATA = [
     image: "🤷‍♂️",
     difficulty: "Intermédiaire",
     duration: "01 Mois",
+    impact: "N/A"
+  },
+  {
+    id: 7,
+    title: "RAG App",
+    description: "RAG est une application qui permet de faire des recherches dans vos documents PDF, Word, Excel, PowerPoint et autres..",
+    longDescription: "Une application complète de recherche dans vos documents PDF, Word, Excel, PowerPoint et autres. Elle utilise l'IA pour comprendre le contenu de vos documents et fournir des réponses précises à vos questions.",
+    technologies: ["Python", "GROQ API", "Gradio", "GroqCloud","LLMs", "LangChain", "ChromaDB", "HuggingFace"],
+    category: "AI/ML",
+    status: "Terminé",
+    icon: Code,
+    color: "from-green-500 to-emerald-600",
+    features: ["RAG", "VectorDB", "Optimisation", "Personnalisation", "Multi-format", "Analytics"],
+    github: "https://huggingface.co/spaces/donerick/",
+    demo: "https://huggingface.co/spaces/donerick/Projects",
+    image: rag,
+    difficulty: "Avancé",
+    duration: "02 jours",
     impact: "N/A"
   },
 ];
